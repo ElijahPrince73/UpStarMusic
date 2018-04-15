@@ -3,7 +3,11 @@ const Schema = mongoose.Schema
 const AlbumSchema = require('./album');
 
 const ArtistSchema = new Schema({
-	name: String,
+	name: {
+		type: String,
+		// Allows for us to search by name
+		text: true
+	},
 	age: Number,
 	yearsActive: Number,
 	image: String,
